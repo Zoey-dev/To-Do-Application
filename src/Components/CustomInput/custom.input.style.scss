@@ -1,0 +1,42 @@
+.custom-input{
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+    
+
+
+    &-label{
+        position: absolute;
+        color: #b6c2e4;
+        top: 0rem;
+        display: block;
+        left: 1rem;
+        transition: linear 400ms all;
+        
+    }
+
+    & input{
+        background-color: transparent;
+        width: 100%;
+        height: 1rem;
+        outline: none;
+        border: 0;
+        font-size: 1rem;
+        color: #b6c2e4;
+        padding-left: 1rem;
+        border-bottom: solid #3450A1 2px;
+        letter-spacing: 2px;
+    
+    }
+
+     &-label.active{
+        top: -1.5rem;
+        left: 0.5rem;
+        font-size: 0.8ren;
+        color: rgb(233,99,254);
+    }
+
+   
+
+
+}
