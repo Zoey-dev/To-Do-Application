@@ -1,13 +1,10 @@
 import './App.css';
-import Todo from './Components/Todo';
-import AppContextProvider from './StateManager/context';
+import Button from './Components/Button/button'
 
 function App() {
   return (
     <div className="App">
-      <AppContextProvider>
-      <Todo />
-      </AppContextProvider>
+      <Button handleClick={() => alert("hello")} type="back"/>
     </div>
   );
 }
