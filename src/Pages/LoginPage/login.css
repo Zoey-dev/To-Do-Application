@@ -1,0 +1,34 @@
+.login-page{
+    min-height: 100px;
+    padding: 2rem;
+    position: relative;
+}
+
+.back-arrow{
+    position: absolute;
+}
+
+.login-page h1{
+    margin-bottom: 10rem;
+    margin-top: 7rem;
+    text-align: left;
+    color: white;
+    line-height: 2.5rem;
+    letter-spacing: 0.2rem;
+}
+
+.sign-in{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+
+.sign-in h3{
+    color: white;
+
+}
+
+.links{
+    justify-content: space-between;
+}

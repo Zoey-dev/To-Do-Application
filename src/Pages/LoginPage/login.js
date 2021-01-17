@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import CustomInput from '../../Components/CustomInput/custom.input.component';
 import Button from '../../Components/Button/button';
+import { Link } from 'react-router-dom';
+import './login.css'
+
 
 export default function Login() {
     const [ formData, setFormData] = useState({email: "", password: "", error: ""});
@@ -15,9 +18,9 @@ export default function Login() {
     return (
         
         <div className="login-page">
-            <MdKeyboardArrowLeft className="back-arrow"/>
+            <div className="back-arrow"> <MdKeyboardArrowLeft /></div>
 
-            <h1> Welcome Back</h1>
+            <h1> Welcome <br/> Back!</h1>
 
             <CustomInput
                 type= "text" 
@@ -35,10 +38,16 @@ export default function Login() {
                 handleChange={handleOnChange}
                 required= {true}
             />
-        
-        <h3>Sign In</h3>
+        <div className="sign-in">
+        <h3 >Sign In</h3>
 
-        <Button type="direction"/>
+        <Button type="direction" />
+        </div>
+
+        <div className="links">
+        <Link to="google.com">Sign Up</Link>
+        <Link to="google.com">Forgot Password</Link>
+        </div>
 
         </div>
     )
