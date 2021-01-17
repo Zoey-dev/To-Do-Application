@@ -6,6 +6,10 @@
     border: none;
 }
 
+.transparent{
+    background-color: transparent;
+}
+
 .add-icon{
     font-size: 1.5rem;
     color: white;
@@ -18,6 +22,10 @@
 }
 
 .arrow-icon{
+    font-size: 1.5rem;
+    color: white;
+}
+.back-arrow{
     font-size: 1.5rem;
     color: white;
 }
