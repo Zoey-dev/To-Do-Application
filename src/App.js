@@ -1,10 +1,11 @@
 import './App.css';
-import Button from './Components/Button/button'
+import Signup from './Pages/SignUpPage/signup';
 
 function App() {
   return (
     <div className="App">
-      <Button handleClick={() => alert("hello")} type="back"/>
+      {/* <Button handleClick={() => alert("hello")} type="back"/> */}
+      <Signup />
     </div>
   );
 }
