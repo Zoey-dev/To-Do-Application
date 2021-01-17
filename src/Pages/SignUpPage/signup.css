@@ -1,0 +1,35 @@
+.signup-page{
+    padding: 2rem;
+    position: relative;
+    min-height: 100px;
+}
+
+.back-arrow{
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+}
+
+.signup-page h1{
+    color: white;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    text-align: left;
+    letter-spacing: 0.1rem;
+}
+
+.signup{
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup h3{
+    color: white;
+}
+
+.link{
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px white solid;
+}
