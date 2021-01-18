@@ -1,11 +1,11 @@
 import './App.css';
-import Signup from './Pages/SignUpPage/signup';
+import Login from './Pages/LoginPage/login';
 
 function App() {
   return (
     <div className="App">
       {/* <Button handleClick={() => alert("hello")} type="back"/> */}
-      <Signup />
+      <Login />
     </div>
   );
 }

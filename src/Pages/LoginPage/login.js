@@ -45,7 +45,7 @@ export default function Login() {
         </div>
 
         <div className="links">
-        <Link to="google.com">Sign Up</Link>
+        <Link to="/signup">Sign Up</Link>
         <Link to="google.com">Forgot Password</Link>
         </div>
 

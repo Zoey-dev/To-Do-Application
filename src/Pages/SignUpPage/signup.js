@@ -58,7 +58,7 @@ export default function Signup() {
               <Button type="direction"/>
             </div>
 
-        <Link className="link" to="" >Sign in</Link>
+        <Link className="link" to="/signin" >Sign in</Link>
         </div>
     )
 }
