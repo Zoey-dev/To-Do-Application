@@ -21,9 +21,6 @@ function Button( {type, handleClick } ) {
                 <MdKeyboardArrowLeft  className="back-arrow"/>
             }
                 
-            
-            
-                
             </button>
     );
 }
