@@ -3,17 +3,17 @@ import { MdKeyboardArrowLeft } from 'react-icons/md';
 import CustomInput from '../../Components/CustomInput/custom.input.component';
 import Button from '../../Components/Button/button';
 import { Link } from 'react-router-dom';
-import './login.css'
 import { useAuth } from '../../Contexts/AuthContexts';
 import { Alert } from 'react-bootstrap';
 
 
 
-export default function Login() {
-    const [ formData, setFormData] = useState({email: "", password: "", error: ""});
-    const { login } = useAuth();
+export default function ForgotPassword() {
+    const [ formData, setFormData] = useState({email: ""});
+    const { resetPassword } = useAuth();
     const [ error, setError] = useState('')
     const [ loading, setLoading] = useState(false)
+    const [ message, setMessage ] = useState('')
 
 
 
@@ -27,12 +27,14 @@ export default function Login() {
         e.preventDefault()
 
         try{
+            setMessage('')
             setError('')
             setLoading(true)
-            await login(formData.email, formData.password)
+            await resetPassword(formData.email)
+            setMessage('Please check your inbox')
         }catch(error){
             console.log(error)
-            setError('Failed to Sign in')
+            setError('Failed to Reset Password')
         }
         setLoading(false)
     }
@@ -42,7 +44,7 @@ export default function Login() {
         <div className="login-page">
             <div className="back-arrow"> <MdKeyboardArrowLeft /></div>
 
-            <h1> Welcome <br/> Back!</h1>
+            <h1> Reset <br/> Password</h1>
             {error && <Alert variant="danger">{error}</Alert>}
 
             <form onSubmit={handleSubmit}>
@@ -55,24 +57,18 @@ export default function Login() {
                             handleChange={handleOnChange}
                             required= {true}
                             />
-                        <CustomInput
-                            type= "password" 
-                            name= "password"
-                            value={formData.password}
-                            label="Password"
-                            handleChange={handleOnChange}
-                            required= {true}
-                            />
+                       
                     <div className="sign-in">
-                    <h3 >Sign In</h3>
+                    <h3 >Reset Password</h3>
 
                     <Button type="direction" />
                     </div>
             </form>
 
         <div className="links">
+        <Link to="/login">Sign In</Link>
         <Link to="/signup">Sign Up</Link>
-        <Link to="/forgotPassword">Forgot Password?</Link>
+
         </div>
 
         </div>
