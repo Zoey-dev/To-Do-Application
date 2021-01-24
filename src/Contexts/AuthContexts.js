@@ -1,5 +1,11 @@
 import React, { createContext, useState, useEffect, useContext} from 'react';
-import { signUpWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from '../Firebase/firebase'
+import {useHistory, useRouteMatch} from 'react-router-dom'
+import { signUpWithEmailAndPassword, 
+    signInWithEmailAndPassword, 
+    sendPasswordResetEmail, 
+    addToStore, 
+    auth,
+    getFromStore } from '../Firebase/firebase'
 
 export const AuthContext = createContext();
 
@@ -7,12 +13,18 @@ export function useAuth(){
     return useContext(AuthContext)
 }
 
+
+
 export function AuthProvider({ children }) {
+
+    const history = useHistory();
+    const match = useRouteMatch();
 
     const [ currentUser, setCurrentUser ] = useState()
 
-    function signup(name, email, password){
-       return signUpWithEmailAndPassword(email, password)
+    async function signup(name, email, password){
+       const userId =  await  signUpWithEmailAndPassword(email, password);
+        await addToStore("userProfile",  {email, name, imageUrl: "", }, userId)
     }
 
     function login(email, password){
@@ -22,12 +34,24 @@ export function AuthProvider({ children }) {
         return sendPasswordResetEmail(email)
     }
 
-    // useEffect(() => {
-    //     const unsubscribe = auth.onAuthStateChanged(user => {
-    //         setCurrentUser(user)
-    //     })
-    //     return unsubscribe;
-    // }, [])
+    async function handleSetUserInfo(user){
+        if(user){
+            const  data = await getFromStore("userProfile", user.uid);
+            if(data){
+                setCurrentUser({id: user.uid, ...data});
+            }
+        }else{
+            setCurrentUser(null);
+        }
+        
+    }
+
+    useEffect(() => {
+        const unsubscribe = auth().onAuthStateChanged(user => {
+            handleSetUserInfo(user)
+        })
+        return unsubscribe;
+    })
 
     const value = {
         currentUser,
