@@ -1,11 +1,11 @@
 import React, { createContext, useState, useEffect, useContext} from 'react';
 import {useHistory, useRouteMatch} from 'react-router-dom'
 import { signUpWithEmailAndPassword, 
-    signInWithEmailAndPassword, 
-    sendPasswordResetEmail, 
-    addToStore, 
-    auth,
-    getFromStore } from '../Firebase/firebase'
+        signInWithEmailAndPassword, 
+        sendPasswordResetEmail, 
+        addToStore, 
+        auth,
+        getFromStore } from '../Firebase/firebase'
 
 export const AuthContext = createContext();
 
