@@ -1,22 +1,21 @@
 import './App.css';
-import {  AuthProvider } from './Contexts/AuthContexts';
-import Signup from './Pages/SignUpPage/signup';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
-import Login from './Pages/LoginPage/login';
-import ForgotPassword from './Pages/ForgotPasswordPage/forgotPassword'
+import ProgressBar from './Components/ProgressBar/progress'
+
+
 
 function App() {
   return (
-      <div className="App"> 
-      <Router>
+     <ProgressBar value = {71}  />
+     
+      /* <Router>
           <AuthProvider>
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/forgotPassword" component={ForgotPassword} />
           </AuthProvider>
-     </Router>
+     </Router> */
+
    
-      </div>
   );
 }
 
