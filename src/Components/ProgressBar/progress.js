@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Container } from './progressStyle'
+import { Container } from './progress_style'
 
 
 const ProgressBar = props => {
