@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import CustomInput from '../../Components/CustomInput/custom.input.component'
-import { Button } from 'react-bootstrap'
+import  Button  from '../../Components/Button/button'
 import './create_category.css'
 
 export default function CreateCategory() {
@@ -57,7 +57,7 @@ export default function CreateCategory() {
                  </div>   
 
                 <div className="add-category">
-                    
+                    <h3>CREATE</h3>
                 <Button type="direction" />
 
                 </div>
