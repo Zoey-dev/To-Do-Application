@@ -1,19 +1,13 @@
-import './App.css';
-import ProgressBar from './Components/ProgressBar/progress'
+import React from 'react';
+import CreateCategory from './Pages/CreateCategory/create_category';
 
 
 
 function App() {
   return (
-     <ProgressBar value = {71}  />
-     
-      /* <Router>
-          <AuthProvider>
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/forgotPassword" component={ForgotPassword} />
-          </AuthProvider>
-     </Router> */
+    <div>
+      <CreateCategory />
+    </div>
 
    
   );
