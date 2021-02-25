@@ -1,0 +1,40 @@
+.create-category{
+    min-height: 100vh;
+    padding: 2rem;
+    /* background-color: #97b4ff; */
+    /* position: relative; */
+}
+
+.create-category h4{
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+    text-align: left;
+    color: cornflowerblue;
+    line-height: 2.5rem;
+    letter-spacing: 0.2rem;
+    font-size: 2rem;
+}
+
+.category-form{
+    padding: 0 4rem 0 2rem;
+}
+
+.color-style{
+    margin-right: 1rem;
+}
+
+.add-category{
+    /* padding: 1rem; */
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    padding-top: 6rem;
+}
+
+.add-category h3{
+    color: cornflowerblue;
+}
+
+label{
+    color: cornflowerblue;
+}
