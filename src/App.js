@@ -1,12 +1,24 @@
 import React from 'react';
-import CreateCategory from './Pages/CreateCategory/create_category';
+import Category from './Components/CategoryComponent/category'
 
 
 
 function App() {
+
+  const data = [
+    {
+      tag: "Personal",
+      totalTask: 1,
+      completedTask: 0,
+      color: "blue"
+    }
+  ]
+
   return (
     <div>
-      <CreateCategory />
+      {
+        data.map(x => <Category data = {x} />)
+      }
     </div>
 
    
