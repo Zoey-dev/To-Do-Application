@@ -11,8 +11,8 @@ export default function Category(props) {
 
     return (
         <CategoryWrapper color={color}>
-            <h4>{tag}</h4>
-            <span>Tasks: {totalTask}</span>
+            <h2>{tag}</h2>
+            <span className="category-tasks">Tasks: {totalTask}</span> <br/>
             <Progress value = {completionRatio} />
         </CategoryWrapper>
         
