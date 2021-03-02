@@ -1,9 +1,7 @@
 import React from 'react'
 import Progress from '../ProgressBar/progress'
+import {CategoryWrapper} from './category_style'
 
-// const CategoryWrapper = `
-//     background: ${({color})=>color}
-// `
 
 export default function Category(props) {
     const {tag, completedTask, totalTask, color} = props.data
@@ -12,11 +10,11 @@ export default function Category(props) {
 
 
     return (
-        <div className="category-style" color={color}>
+        <CategoryWrapper color={color}>
             <h4>{tag}</h4>
-            <span>Task: {totalTask}</span>
+            <span>Tasks: {totalTask}</span>
             <Progress value = {completionRatio} />
-        </div>
+        </CategoryWrapper>
         
     )
 }
