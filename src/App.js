@@ -7,6 +7,8 @@ import {Route, BrowserRouter} from 'react-router-dom'
 import {AuthProvider} from './Contexts/AuthContexts'
 import Category from './Components/CategoryComponent/category';
 
+import React from 'react';
+import CreateCategory from './Pages/CreateCategory/create_category';
 
 
 
@@ -47,8 +49,9 @@ function App() {
               <Route exact path="/forgotPassword" component={ForgotPassword} />
           </AuthProvider>
      </BrowserRouter>
+      <CreateCategory />
+    </div>
 
-     </div>
   );
 }
 
