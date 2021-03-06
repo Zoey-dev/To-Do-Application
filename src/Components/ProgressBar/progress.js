@@ -9,7 +9,7 @@ const ProgressBar = props => {
   return (
     <Container color={value > 70 ? "green" : "red"} width={width}>
       <progress value = {value} max ={max} />
-      <span style={{fontSize: '0.7rem'}}>{(value / max) * 100}%</span>
+      <span style={{fontSize: '0.7rem'}}>{Math.round(value / max) * 100}%</span>
     </Container>
     
   );

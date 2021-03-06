@@ -1,21 +1,20 @@
-import React from 'react';
-import Progress from "../ProgressBar/progress";
+import React from 'react'
+import Progress from '../ProgressBar/progress'
+import {CategoryWrapper} from './category_style'
 
-// const CategoryWrapper = `
-//     // background-color: ${({color})=>color}
-// `
+
 export default function Category(props) {
-        const {tag, color, completedTask, totalTask} = props.data;
+    const {tag, completedTask, totalTask, color} = props.data
 
-        const completionRatio  = Math.round((completedTask / totalTask) * 100);
-        console.log(completedTask);
+    const completionRatio = Math.round((completedTask / totalTask) * 100)
+
+
     return (
-        <div color={color}>
-            <h4>{tag}</h4>
-            <span>Tasks: {totalTask}</span>
-            <Progress 
-                value = {completionRatio}
-             />
-        </div>
+        <CategoryWrapper color={color}>
+            <h2>{tag}</h2>
+            <span className="category-tasks">Tasks: {totalTask}</span> <br/>
+            <Progress value = {completionRatio} />
+        </CategoryWrapper>
+        
     )
 }
