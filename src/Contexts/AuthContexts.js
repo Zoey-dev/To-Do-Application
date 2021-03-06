@@ -24,14 +24,15 @@ export function AuthProvider({ children }) {
 
     async function signup(name, email, password){
        const userId =  await signUpWithEmailAndPassword(email, password);
-        await addToStore("userProfile",  {email, name, imageUrl: "", }, userId)
+       let userInfo = await addToStore("userProfile",  {email, name, imageUrl: "", }, userId)
     }
 
-    function login(email, password){
-        return signInWithEmailAndPassword(email, password)
+    async function login(email, password){
+        return await signInWithEmailAndPassword(email, password)
     }
-    function resetPassword(email){
-        return sendPasswordResetEmail(email)
+
+    async function resetPassword(email){
+        return await sendPasswordResetEmail(email)
     }
 
     async function handleSetUserInfo(user){
