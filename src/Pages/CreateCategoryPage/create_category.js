@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import CustomInput from '../../Components/CustomInput/custom.input.component'
 import  Button  from '../../Components/Button/button'
 import './create_category.css'
+import { AuthContext } from '../../Contexts/AuthContexts'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function CreateCategory() {
     const [ categoryForm, setCategoryForm ] = useState({tag: "", color: "#041955"})
     const [error, setError ] = useState('')
     const [ loading, setLoading ] = useState(false)
+    const { currentUser } = useContext(AuthContext)
+    // console.log(currentUser)
 
 
     const handleOnChange = (evt) => {
@@ -21,7 +25,8 @@ export default function CreateCategory() {
         try{
             setError('')
             setLoading(true)
-            (categoryForm.tag, categoryForm.color)
+            const category = {tag: categoryForm.tag, color: categoryForm.color, userId: currentUser.id, id: uuidv4()} 
+            console.log(category)
         }catch(error){
             console.log(error)
             setError('Failed to Create Category')
@@ -40,7 +45,7 @@ export default function CreateCategory() {
                     name="tag"
                     value={categoryForm.tag}
                     label="TAG"
-                    handleOnChange={handleOnChange}
+                    handleChange={handleOnChange}
                     required= {true}
                     />
 
@@ -52,13 +57,14 @@ export default function CreateCategory() {
                     name="color"
                     value={categoryForm.color}
                     label="Color"
+                    onChange={handleOnChange}
                     required={true}
                     />
                  </div>   
 
                 <div className="add-category">
                     <h3>CREATE</h3>
-                <Button type="direction" />
+                <Button handleClick={handleCreate} type="direction" />
 
                 </div>
 

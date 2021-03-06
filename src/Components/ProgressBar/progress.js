@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Container } from './progressStyle'
+import { Container } from './progress_style'
 
 
 const ProgressBar = props => {
@@ -9,7 +9,7 @@ const ProgressBar = props => {
   return (
     <Container color={value > 70 ? "green" : "red"} width={width}>
       <progress value = {value} max ={max} />
-      <span style={{fontSize: '0.7rem'}}>{(value / max) * 100}%</span>
+      <span style={{fontSize: '0.7rem'}}>{Math.round(value / max) * 100}%</span>
     </Container>
     
   );
